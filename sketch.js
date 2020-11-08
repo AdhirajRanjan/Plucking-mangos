@@ -31,12 +31,12 @@ function setup() {
 
 	stoneObj = new stone(120,460,10,10)
 
-	mango1 = new mango(970,130,300)
-	mango2 = new mango(1050,150,300)
-	mango3 = new mango(970,220,300)
-	mango4 = new mango(870,240,300)
-	mango5 = new mango(1060,240,300)
-	mango6 = new mango(1140,260,300)
+	mango1 = new mango(970,130)
+	mango2 = new mango(1050,150)
+	mango3 = new mango(970,220)
+	mango4 = new mango(870,240)
+	mango5 = new mango(1060,240)
+	mango6 = new mango(1140,260)
 
 	slingshot = new Chain(stoneObj.body,{x:120, y:460});
 
@@ -50,7 +50,7 @@ function setup() {
 function draw() {
   rectMode(CENTER);
 
-  background(0);
+  background(200,200,200);
   
 
   stoneObj.display()
@@ -102,7 +102,7 @@ function keyPressed()
 {
 	if (keyCode === 32)
 	{
-		Matter.Body.setPosition(stoneObj.body, {x:235, y:420})
-		launcherObject.attach(stoneObj.body)
+		Matter.Body.setPosition(stoneObj.body, {x:120, y:460})
+		slingshot.attach(stoneObj.body, {x:120, y:460})
 	}
 }
